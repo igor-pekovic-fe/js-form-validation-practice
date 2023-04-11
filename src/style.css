@@ -1,3 +1,4 @@
+/* Custom variables */
 :root {
   --bg-color: #9b59b6;
   --header-bg-color: #f7f7f7;
@@ -9,6 +10,7 @@
   --white: #fff;
 }
 
+/* Small CSS reset */
 *,
 *::before,
 *::after {
@@ -17,6 +19,7 @@
   padding: 0;
 }
 
+/* Styling */
 body {
   font-family: "Montserrat", sans-serif;
   display: grid;
@@ -124,13 +127,13 @@ button {
   align-items: center;
   justify-content: center;
   gap: 0.3em;
-  font-family: inherit;
   width: 60%;
   background-color: var(--btn-color);
-  text-transform: uppercase;
+  font-family: inherit;
   font-size: 1.325rem;
   font-weight: 500;
   color: var(--white);
+  text-transform: uppercase;
   border: 2px solid var(--btn-color);
   border-radius: 5px;
   margin-inline: auto;
@@ -139,18 +142,13 @@ button {
   transition: filter 0.2s ease-in-out;
 }
 
-button:disabled {
-  cursor: not-allowed;
-  color: var(--btn-color);
-  background-color: var(--white);
-}
-
 button:is(:hover, :focus) {
   outline: 0;
   border-color: var(--btn-color);
   filter: brightness(130%);
 }
 
+/* Remove arrows from number inputs */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -161,6 +159,8 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+/* Media queries */
+/* Tablet responsiveness */
 @media (min-width: 768px) {
   .form-container {
     max-width: 46rem;
@@ -209,6 +209,7 @@ input[type="number"] {
   }
 }
 
+/* Desktop responsiveness */
 @media (min-width: 1024px) {
   .form-container {
     width: 60rem;
