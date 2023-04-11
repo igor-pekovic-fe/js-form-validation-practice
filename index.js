@@ -6,6 +6,9 @@ const customerHomeNumber = document.getElementById("customerHomeNumber");
 const customerZipcode = document.getElementById("customerZipcode");
 const customerPhoneNumber = document.getElementById("customerPhoneNumber");
 const customerLocation = document.getElementById("customerLocation");
+const customerSpecialIntructions = document.getElementById(
+  "customerSpecialIntructions"
+);
 
 const submitBtn = document.querySelector("button");
 
@@ -14,67 +17,6 @@ form.addEventListener("submit", (e) => {
 
   checkInputs();
 });
-
-// function checkInputs() {
-//   const usernameValue = customerName.value.trim();
-//   const emailValue = customerEmail.value.trim();
-//   const addressValue = customerAddress.value.trim();
-//   const homeNumberValue = customerHomeNumber.value.trim();
-//   const zipcodeValue = customerZipcode.value.trim();
-//   const phoneNumberValue = customerPhoneNumber.value.trim().replaceAll("-", "");
-//   const locationValue = customerLocation.value.trim();
-
-//   if (usernameValue === "")
-//     setErrorFor(customerName, "Molimo unesite ime i prezime");
-//   if (usernameValue !== "") setSuccessFor(customerName);
-
-//   if (emailValue === "")
-//     setErrorFor(customerEmail, "Molimo unesite email adresu");
-//   if (emailValue !== "" && !isEmail(emailValue))
-//     setErrorFor(customerEmail, "Molimo unesite pravilan email");
-//   if (emailValue !== "" && isEmail(emailValue)) setSuccessFor(customerEmail);
-
-//   if (addressValue === "")
-//     setErrorFor(customerAddress, "Molimo unesite adresu");
-//   if (addressValue !== "") setSuccessFor(customerAddress);
-
-//   if (homeNumberValue === "")
-//     setErrorFor(customerHomeNumber, "Molimo unesite kućni broj");
-//   if (homeNumberValue !== "") setSuccessFor(customerHomeNumber);
-
-//   if (zipcodeValue === "")
-//     setErrorFor(customerZipcode, "Molimo unesite poštanski broj");
-//   if (zipcodeValue !== "") setSuccessFor(customerZipcode);
-
-//   if (phoneNumberValue === "")
-//     setErrorFor(customerPhoneNumber, "Molimo unesite telefonski broj");
-//   if (phoneNumberValue !== "" && phoneNumberValue.length < 9)
-//     setErrorFor(customerPhoneNumber, "Broj mora sadržati najmanje 9 brojeva");
-//   if (phoneNumberValue !== "" && phoneNumberValue.length > 9)
-//     setSuccessFor(customerPhoneNumber);
-
-//   if (locationValue === "")
-//     setErrorFor(customerLocation, "Molimo unesite mjesto");
-//   if (locationValue !== "") setSuccessFor(customerLocation);
-// }
-
-// function setErrorFor(input, message) {
-//   const formInput = input.parentElement;
-//   const errorEl = formInput.querySelector(".error-message");
-//   formInput.className = "form-input error";
-//   errorEl.innerText = message;
-// }
-
-// function setSuccessFor(input) {
-//   const formInput = input.parentElement;
-//   formInput.className = "form-input success";
-// }
-
-// function isEmail(email) {
-//   return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-//     email
-//   );
-// }
 
 function validateInput(
   inputValue,
@@ -116,16 +58,20 @@ function checkInputs() {
   const addressValue = customerAddress.value.trim();
   const homeNumberValue = customerHomeNumber.value.trim();
   const zipcodeValue = customerZipcode.value.trim();
-  const phoneNumberValue = customerPhoneNumber.value.trim().replaceAll(" ", "");
+  const phoneNumberValue = customerPhoneNumber.value
+    .trim()
+    .replaceAll(" ", "")
+    .replaceAll("-", "");
   const locationValue = customerLocation.value.trim();
 
   validateInput(nameValue, "Molimo unesite ime i prezime", customerName, null);
 
   validateInput(
     emailValue,
-    "Molimo unesite ispravnu email adresu",
+    "Molimo unesite email adresu",
     customerEmail,
-    isEmail
+    isEmail,
+    "Molimo unesite ispravnu email adresu"
   );
 
   validateInput(addressValue, "Molimo unesite adresu", customerAddress, null);
@@ -160,16 +106,16 @@ function checkInputs() {
     if (input.classList.contains("error")) isValid = false;
   });
 
-  // if all inputs are valid, log the input values
   if (isValid) {
-    console.log(
-      `Ime i prezime: ${nameValue}
+    console.log(`
+        Podaci narudžbe
+        Ime i prezime: ${nameValue}
         Email: ${emailValue}
         Adresa: ${addressValue}
         Kućni broj: ${homeNumberValue}
         Postanski broj: ${zipcodeValue}
         Telefonski broj: ${phoneNumberValue}
-        Mjesto: ${locationValue}`
-    );
+        Mjesto: ${locationValue}
+        Posebne napomene: ${customerSpecialIntructions.value}`);
   }
 }

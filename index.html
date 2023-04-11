@@ -20,81 +20,97 @@
     <title>Forma za narudžbu</title>
   </head>
   <body>
-    <div class="container">
+    <div class="form-container">
       <header>
         <h2>Unesite podatke za narudžbu</h2>
       </header>
       <main>
-        <form>
-          <div class="form-input">
-            <label for="customerName">Ime i prezime</label>
-            <input
-              type="text"
-              placeholder="Marko Marković"
-              id="customerName"
-              pattern="[a-zA-Z\s]+"
-            />
-            <i class="ri-checkbox-circle-line"></i>
-            <i class="ri-error-warning-line"></i>
-            <span class="error-message"></span>
+        <form id="form" class="form">
+          <span class="form-note">* - Obavezan unos</span>
+          <div class="form-grid">
+            <div class="form-input">
+              <label for="customerName">Ime i prezime*</label>
+              <input
+                type="text"
+                placeholder="Marko Marković"
+                id="customerName"
+                pattern="[a-zA-Z\s]+"
+              />
+              <i class="ri-checkbox-circle-line"></i>
+              <i class="ri-error-warning-line"></i>
+              <span class="error-message"></span>
+            </div>
+            <div class="form-input">
+              <label for="customerEmail">Email*</label>
+              <input
+                type="email"
+                placeholder="marko.markovic@gmail.com"
+                id="customerEmail"
+              />
+              <i class="ri-checkbox-circle-line"></i>
+              <i class="ri-error-warning-line"></i>
+              <span class="error-message"></span>
+            </div>
+            <div class="form-input">
+              <label for="customerAddress">Adresa*</label>
+              <input
+                type="text"
+                placeholder="Milutina Milankovića 69"
+                id="customerAddress"
+              />
+              <i class="ri-checkbox-circle-line"></i>
+              <i class="ri-error-warning-line"></i>
+              <span class="error-message"></span>
+            </div>
+            <div class="form-input">
+              <label for="customerHomeNumber">Kućni broj*</label>
+              <input type="number" placeholder="4" id="customerHomeNumber" />
+              <i class="ri-checkbox-circle-line"></i>
+              <i class="ri-error-warning-line"></i>
+              <span class="error-message"></span>
+            </div>
+            <div class="form-input">
+              <label for="customerZipcode">Poštanski broj*</label>
+              <input type="number" placeholder="78000" id="customerZipcode" />
+              <i class="ri-checkbox-circle-line"></i>
+              <i class="ri-error-warning-line"></i>
+              <span class="error-message"></span>
+            </div>
+            <div class="form-input">
+              <label for="customerPhoneNumber">Telefon*</label>
+              <input
+                type="tel"
+                placeholder="000 111 222"
+                id="customerPhoneNumber"
+                pattern="[0-9\s]+"
+              />
+              <i class="ri-checkbox-circle-line"></i>
+              <i class="ri-error-warning-line"></i>
+              <span class="error-message"></span>
+            </div>
+            <div class="form-input">
+              <label for="customerLocation">Mjesto*</label>
+              <input
+                type="text"
+                placeholder="Banja Luka"
+                id="customerLocation"
+              />
+              <i class="ri-checkbox-circle-line"></i>
+              <i class="ri-error-warning-line"></i>
+              <span class="error-message"></span>
+            </div>
           </div>
           <div class="form-input">
-            <label for="customerEmail">Email</label>
-            <input
-              type="email"
-              placeholder="marko.markovic@gmail.com"
-              id="customerEmail"
-            />
-            <i class="ri-checkbox-circle-line"></i>
-            <i class="ri-error-warning-line"></i>
-            <span class="error-message"></span>
+            <label for="customerSpecialIntructions">Posebne napomene</label>
+            <textarea
+              name="Special Instructions"
+              id="customerSpecialIntructions"
+              cols="30"
+              rows="10"
+            ></textarea>
           </div>
-          <div class="form-input">
-            <label for="customerAddress">Adresa</label>
-            <input
-              type="text"
-              placeholder="Milutina Milankovića 69"
-              id="customerAddress"
-            />
-            <i class="ri-checkbox-circle-line"></i>
-            <i class="ri-error-warning-line"></i>
-            <span class="error-message"></span>
-          </div>
-          <div class="form-input">
-            <label for="customerHomeNumber">Kućni broj</label>
-            <input type="number" placeholder="4" id="customerHomeNumber" />
-            <i class="ri-checkbox-circle-line"></i>
-            <i class="ri-error-warning-line"></i>
-            <span class="error-message"></span>
-          </div>
-          <div class="form-input">
-            <label for="customerZipcode">Poštanski broj</label>
-            <input type="number" placeholder="78000" id="customerZipcode" />
-            <i class="ri-checkbox-circle-line"></i>
-            <i class="ri-error-warning-line"></i>
-            <span class="error-message"></span>
-          </div>
-          <div class="form-input">
-            <label for="customerPhoneNumber">Telefon</label>
-            <input
-              type="tel"
-              placeholder="000 111 222"
-              id="customerPhoneNumber"
-            />
-            <i class="ri-checkbox-circle-line"></i>
-            <i class="ri-error-warning-line"></i>
-            <span class="error-message"></span>
-          </div>
-          <div class="form-input">
-            <label for="customerLocation">Mjesto</label>
-            <input type="text" placeholder="Banja Luka" id="customerLocation" />
-            <i class="ri-checkbox-circle-line"></i>
-            <i class="ri-error-warning-line"></i>
-            <span class="error-message"></span>
-          </div>
-
-          <button type="submit">Naruči</button>
         </form>
+        <button form="form" type="submit">Naruči</button>
       </main>
     </div>
     <script src="index.js"></script>

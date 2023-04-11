@@ -26,9 +26,8 @@ body {
   background-color: var(--bg-color);
 }
 
-.container {
-  max-width: 24rem;
-  min-width: 15rem;
+.form-container {
+  width: 24rem;
   overflow: hidden;
   background-color: var(--white);
   border-radius: 5px;
@@ -37,13 +36,22 @@ body {
 }
 
 header,
-form {
-  padding: 1.5em 2em;
+button,
+.form {
+  padding: 1.5em;
 }
 
 header {
   border-bottom: 2px solid var(--gray-neutral-color);
   background-color: var(--header-bg-color);
+}
+
+.form-note {
+  display: flex;
+  justify-content: end;
+  font-size: 0.625rem;
+  font-weight: 500;
+  margin-bottom: 1em;
 }
 
 .form-input {
@@ -110,14 +118,28 @@ header {
   visibility: hidden;
 }
 
+.form-input textarea {
+  font-family: inherit;
+  width: 100%;
+  resize: none;
+  border: 2px solid var(--gray-neutral-color);
+  border-radius: 4px;
+  padding: 0.625em;
+}
+
+.form-input textarea:focus {
+  outline: 0;
+  border-color: var(--gray-dark-color);
+}
+
 .form-input.error span {
   visibility: visible;
 }
 
-form button {
+button {
   display: block;
   font-family: inherit;
-  width: 100%;
+  width: 60%;
   background-color: var(--btn-color);
   text-transform: uppercase;
   font-size: 1.325rem;
@@ -125,26 +147,66 @@ form button {
   color: var(--white);
   border: 2px solid var(--btn-color);
   border-radius: 4px;
-  margin-top: 1.25em;
+  margin-inline: auto;
+  margin-block-end: 1.5em;
   padding: 0.625em;
 }
 
-form button:disabled {
+button:disabled {
   cursor: not-allowed;
   color: var(--btn-color);
   background-color: var(--white);
 }
 
-form button:is(:hover, :focus) {
+button:is(:hover, :focus) {
+  outline: 0;
+  border-color: var(--btn-color);
   filter: brightness(130%);
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 @media (min-width: 768px) {
-  .container {
-    max-width: 70rem;
+  .form-container {
+    width: 40rem;
   }
+
+  header,
   form {
+    padding: 2em 3em;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .form-grid {
     display: grid;
-    grid-template: repeat(4, 1fr) / 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 1em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .form-container {
+    width: 50rem;
+  }
+
+  header,
+  form {
+    padding: 2.5em 3.5em;
+  }
+
+  h2 {
+    font-size: 2.2rem;
   }
 }
