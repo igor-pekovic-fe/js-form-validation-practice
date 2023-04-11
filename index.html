@@ -36,6 +36,7 @@
                 placeholder="Marko Marković"
                 id="customerName"
                 pattern="[a-zA-Z\s]+"
+                required
               />
               <span class="error-message"></span>
             </div>
@@ -46,6 +47,7 @@
                 placeholder="000 111 222"
                 id="customerPhoneNumber"
                 pattern="[0-9\s]+"
+                required
               />
               <span class="error-message"></span>
             </div>
@@ -55,17 +57,28 @@
                 type="text"
                 placeholder="Milutina Milankovića 69"
                 id="customerAddress"
+                required
               />
               <span class="error-message"></span>
             </div>
             <div class="form-input">
               <label for="customerHomeNumber">Kućni broj*</label>
-              <input type="number" placeholder="10" id="customerHomeNumber" />
+              <input
+                type="number"
+                placeholder="10"
+                id="customerHomeNumber"
+                required
+              />
               <span class="error-message"></span>
             </div>
             <div class="form-input">
               <label for="customerZipcode">Poštanski broj*</label>
-              <input type="number" placeholder="78000" id="customerZipcode" />
+              <input
+                type="number"
+                placeholder="78000"
+                id="customerZipcode"
+                required
+              />
               <span class="error-message"></span>
             </div>
             <div class="form-input">
@@ -74,6 +87,7 @@
                 type="text"
                 placeholder="Banja Luka"
                 id="customerLocation"
+                required
               />
               <span class="error-message"></span>
             </div>
@@ -83,6 +97,7 @@
                 type="email"
                 placeholder="marko.markovic@gmail.com"
                 id="customerEmail"
+                required
               />
               <span class="error-message"></span>
             </div>
