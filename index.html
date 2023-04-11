@@ -21,8 +21,8 @@
   </head>
   <body>
     <div class="form-container">
-      <header>
-        <h2>Unesite podatke za narudžbu</h2>
+      <header class="header">
+        <h1>Unesite podatke za narudžbu</h1>
       </header>
       <main>
         <form id="form" class="form">
@@ -41,18 +41,19 @@
               <span class="error-message"></span>
             </div>
             <div class="form-input">
-              <label for="customerEmail">Email*</label>
+              <label for="customerPhoneNumber">Telefon*</label>
               <input
-                type="email"
-                placeholder="marko.markovic@gmail.com"
-                id="customerEmail"
+                type="tel"
+                placeholder="000 111 222"
+                id="customerPhoneNumber"
+                pattern="[0-9\s]+"
               />
               <i class="ri-checkbox-circle-line"></i>
               <i class="ri-error-warning-line"></i>
               <span class="error-message"></span>
             </div>
             <div class="form-input">
-              <label for="customerAddress">Adresa*</label>
+              <label for="customerAddress">Adresa stanovanja*</label>
               <input
                 type="text"
                 placeholder="Milutina Milankovića 69"
@@ -77,23 +78,22 @@
               <span class="error-message"></span>
             </div>
             <div class="form-input">
-              <label for="customerPhoneNumber">Telefon*</label>
+              <label for="customerLocation">Mjesto*</label>
               <input
-                type="tel"
-                placeholder="000 111 222"
-                id="customerPhoneNumber"
-                pattern="[0-9\s]+"
+                type="text"
+                placeholder="Banja Luka"
+                id="customerLocation"
               />
               <i class="ri-checkbox-circle-line"></i>
               <i class="ri-error-warning-line"></i>
               <span class="error-message"></span>
             </div>
             <div class="form-input">
-              <label for="customerLocation">Mjesto*</label>
+              <label for="customerEmail">Email adresa*</label>
               <input
-                type="text"
-                placeholder="Banja Luka"
-                id="customerLocation"
+                type="email"
+                placeholder="marko.markovic@gmail.com"
+                id="customerEmail"
               />
               <i class="ri-checkbox-circle-line"></i>
               <i class="ri-error-warning-line"></i>
@@ -110,7 +110,10 @@
             ></textarea>
           </div>
         </form>
-        <button form="form" type="submit">Naruči</button>
+        <button form="form" type="submit">
+          <i class="ri-shopping-cart-2-line"></i>
+          Naruči
+        </button>
       </main>
     </div>
     <script src="index.js"></script>

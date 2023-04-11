@@ -1,16 +1,15 @@
-const form = document.querySelector("form");
-const customerName = document.getElementById("customerName");
-const customerEmail = document.getElementById("customerEmail");
-const customerAddress = document.getElementById("customerAddress");
-const customerHomeNumber = document.getElementById("customerHomeNumber");
-const customerZipcode = document.getElementById("customerZipcode");
-const customerPhoneNumber = document.getElementById("customerPhoneNumber");
-const customerLocation = document.getElementById("customerLocation");
-const customerSpecialIntructions = document.getElementById(
-  "customerSpecialIntructions"
-);
-
-const submitBtn = document.querySelector("button");
+const form = document.querySelector(".form"),
+  submitBtn = document.querySelector("button"),
+  customerName = document.getElementById("customerName"),
+  customerEmail = document.getElementById("customerEmail"),
+  customerAddress = document.getElementById("customerAddress"),
+  customerHomeNumber = document.getElementById("customerHomeNumber"),
+  customerZipcode = document.getElementById("customerZipcode"),
+  customerPhoneNumber = document.getElementById("customerPhoneNumber"),
+  customerLocation = document.getElementById("customerLocation"),
+  customerSpecialIntructions = document.getElementById(
+    "customerSpecialIntructions"
+  );
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -26,22 +25,22 @@ function validateInput(
   validationErrorMessage
 ) {
   if (inputValue === "") {
-    setErrorFor(inputElement, errorMessage);
+    displayError(inputElement, errorMessage);
   } else if (validationFunction && !validationFunction(inputValue)) {
-    setErrorFor(inputElement, validationErrorMessage || errorMessage);
+    displayError(inputElement, validationErrorMessage || errorMessage);
   } else {
-    setSuccessFor(inputElement);
+    displaySuccess(inputElement);
   }
 }
 
-function setErrorFor(input, message) {
+function displayError(input, message) {
   const formInput = input.parentElement;
   const errorEl = formInput.querySelector(".error-message");
   formInput.className = "form-input error";
   errorEl.innerText = message;
 }
 
-function setSuccessFor(input) {
+function displaySuccess(input) {
   const formInput = input.parentElement;
   formInput.className = "form-input success";
 }
@@ -53,42 +52,19 @@ function isEmail(email) {
 }
 
 function checkInputs() {
-  const nameValue = customerName.value.trim();
-  const emailValue = customerEmail.value.trim();
-  const addressValue = customerAddress.value.trim();
-  const homeNumberValue = customerHomeNumber.value.trim();
-  const zipcodeValue = customerZipcode.value.trim();
-  const phoneNumberValue = customerPhoneNumber.value
-    .trim()
-    .replaceAll(" ", "")
-    .replaceAll("-", "");
-  const locationValue = customerLocation.value.trim();
+  const nameValue = customerName.value.trim(),
+    addressValue = customerAddress.value.trim(),
+    homeNumberValue = customerHomeNumber.value.trim(),
+    zipcodeValue = customerZipcode.value.trim(),
+    locationValue = customerLocation.value.trim(),
+    emailValue = customerEmail.value.trim(),
+    specialInstructions = customerSpecialIntructions.value.trim(),
+    phoneNumberValue = customerPhoneNumber.value
+      .trim()
+      .replaceAll(" ", "")
+      .replaceAll("-", "");
 
-  validateInput(nameValue, "Molimo unesite ime i prezime", customerName, null);
-
-  validateInput(
-    emailValue,
-    "Molimo unesite email adresu",
-    customerEmail,
-    isEmail,
-    "Molimo unesite ispravnu email adresu"
-  );
-
-  validateInput(addressValue, "Molimo unesite adresu", customerAddress, null);
-
-  validateInput(
-    homeNumberValue,
-    "Molimo unesite kućni broj",
-    customerHomeNumber,
-    null
-  );
-
-  validateInput(
-    zipcodeValue,
-    "Molimo unesite poštanski broj",
-    customerZipcode,
-    null
-  );
+  validateInput(nameValue, "Molimo unesite ime i prezime", customerName);
 
   validateInput(
     phoneNumberValue,
@@ -98,7 +74,37 @@ function checkInputs() {
     "Broj mora sadržati najmanje 9 brojeva"
   );
 
-  validateInput(locationValue, "Molimo unesite mjesto", customerLocation, null);
+  validateInput(
+    addressValue,
+    "Molimo unesite adresu stanovanja",
+    customerAddress
+  );
+
+  validateInput(
+    homeNumberValue,
+    "Molimo unesite kućni broj",
+    customerHomeNumber,
+    (number) => +number > 0,
+    "Broj more biti veći od 0"
+  );
+
+  validateInput(
+    zipcodeValue,
+    "Molimo unesite poštanski broj",
+    customerZipcode,
+    (number) => +number > 0,
+    "Broj more biti veći od 0"
+  );
+
+  validateInput(locationValue, "Molimo unesite mjesto", customerLocation);
+
+  validateInput(
+    emailValue,
+    "Molimo unesite email adresu",
+    customerEmail,
+    isEmail,
+    "Molimo unesite ispravnu email adresu"
+  );
 
   const formInputs = document.querySelectorAll(".form-input");
   let isValid = true;
@@ -108,14 +114,14 @@ function checkInputs() {
 
   if (isValid) {
     console.log(`
-        Podaci narudžbe
+        Narudžba uspješna! Podaci narudžbe:
         Ime i prezime: ${nameValue}
         Email: ${emailValue}
         Adresa: ${addressValue}
         Kućni broj: ${homeNumberValue}
-        Postanski broj: ${zipcodeValue}
+        Poštanski broj: ${zipcodeValue}
         Telefonski broj: ${phoneNumberValue}
         Mjesto: ${locationValue}
-        Posebne napomene: ${customerSpecialIntructions.value}`);
+        Posebne napomene: ${specialInstructions}`);
   }
 }
