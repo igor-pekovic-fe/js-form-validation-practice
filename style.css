@@ -59,7 +59,6 @@ header h1 {
 
 .form-input {
   margin-bottom: 0.625em;
-  padding-bottom: 1.3em;
   position: relative;
 }
 
@@ -75,7 +74,7 @@ header h1 {
   font-family: inherit;
   font-size: 0.875rem;
   border: 2px solid var(--gray-neutral-color);
-  border-radius: 4px;
+  border-radius: 5px;
   padding: 0.625em;
   transition: border-color 0.2s ease-in-out;
 }
@@ -116,11 +115,7 @@ header h1 {
 .form-input span {
   font-size: 0.8rem;
   color: var(--error-color);
-  position: absolute;
-  bottom: 0;
-  left: 0;
   visibility: hidden;
-  overflow: wrap;
 }
 
 .form-input.error span {
@@ -132,7 +127,7 @@ header h1 {
   width: 100%;
   resize: none;
   border: 2px solid var(--gray-neutral-color);
-  border-radius: 4px;
+  border-radius: 5px;
   padding: 0.625em;
   transition: border-color 0.2s ease-in-out;
 }
@@ -152,7 +147,7 @@ button {
   font-weight: 500;
   color: var(--white);
   border: 2px solid var(--btn-color);
-  border-radius: 4px;
+  border-radius: 5px;
   margin-inline: auto;
   margin-block-end: 1.5em;
   padding: 0.625em;
@@ -208,11 +203,11 @@ input[type="number"] {
   }
 
   .form-input {
-    padding-bottom: 1.5em;
+    padding-bottom: 0.5em;
   }
 
   .form-input label {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .form-input input {
@@ -224,7 +219,7 @@ input[type="number"] {
   }
 
   .form-input span {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   button {
@@ -235,7 +230,7 @@ input[type="number"] {
 
 @media (min-width: 1024px) {
   .form-container {
-    width: 56rem;
+    width: 60rem;
   }
 
   header,
@@ -253,23 +248,23 @@ input[type="number"] {
   }
 
   .form-input {
-    padding-bottom: 1.8em;
+    padding-bottom: 0.8em;
   }
 
   .form-input label {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .form-input input {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .form-input i {
-    top: 48px;
+    top: 45px;
   }
 
   .form-input span {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
   }
 
   button {
