@@ -25,7 +25,7 @@ body {
   place-content: center;
   min-height: 100vh;
   background-color: var(--bg-color);
-  background: url("./img/stacked-waves-haikei.svg") no-repeat;
+  background: url("./img/background.svg") no-repeat;
   background-size: cover;
 }
 
@@ -89,12 +89,12 @@ header h1 {
 }
 
 .form-input.success input {
-  background: url("./img/checkbox-circle-line.svg") no-repeat right;
+  background: url("./img/checkbox-icon.svg") no-repeat right;
   border-color: var(--success-color);
 }
 
 .form-input.error input {
-  background: url("./img/error-warning-line.svg") no-repeat right;
+  background: url("./img/error-icon.svg") no-repeat right;
   border-color: var(--error-color);
 }
 
@@ -138,8 +138,6 @@ button {
   text-transform: uppercase;
   border: 2px solid var(--btn-color);
   border-radius: 5px;
-  /* margin-inline: auto;
-  margin-block-end: 1.5em; */
   margin: auto;
   padding: 0.625em;
   transition: filter 0.2s ease-in-out;

@@ -1,4 +1,4 @@
-const form = document.querySelector(".form"),
+const form = document.querySelector("form"),
   submitBtn = document.querySelector("button"),
   customerName = document.getElementById("customerName"),
   customerEmail = document.getElementById("customerEmail"),
