@@ -59,7 +59,6 @@ header h1 {
 
 .form-input {
   margin-bottom: 0.625em;
-  position: relative;
 }
 
 .form-input label {
@@ -76,6 +75,7 @@ header h1 {
   border: 2px solid var(--gray-neutral-color);
   border-radius: 5px;
   padding: 0.625em;
+  margin-bottom: 0.2em;
   transition: border-color 0.2s ease-in-out;
 }
 
@@ -85,31 +85,13 @@ header h1 {
 }
 
 .form-input.success input {
+  background: url("./img/checkbox-circle-line.svg") no-repeat right;
   border-color: var(--success-color);
 }
 
 .form-input.error input {
+  background: url("./img/error-warning-line.svg") no-repeat right;
   border-color: var(--error-color);
-}
-
-.form-input i {
-  visibility: hidden;
-  position: absolute;
-  top: 34px;
-  right: 10px;
-}
-
-.form-input.success i.ri-checkbox-circle-line,
-.form-input.error i.ri-error-warning-line {
-  visibility: visible;
-}
-
-.form-input.success i.ri-checkbox-circle-line {
-  color: var(--success-color);
-}
-
-.form-input.error i.ri-error-warning-line {
-  color: var(--error-color);
 }
 
 .form-input span {
@@ -138,7 +120,10 @@ header h1 {
 }
 
 button {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3em;
   font-family: inherit;
   width: 60%;
   background-color: var(--btn-color);
@@ -214,10 +199,6 @@ input[type="number"] {
     font-size: 1rem;
   }
 
-  .form-input i {
-    top: 41px;
-  }
-
   .form-input span {
     font-size: 0.8rem;
   }
@@ -257,10 +238,6 @@ input[type="number"] {
 
   .form-input input {
     font-size: 1.1rem;
-  }
-
-  .form-input i {
-    top: 45px;
   }
 
   .form-input span {

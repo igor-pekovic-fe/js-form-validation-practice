@@ -4,18 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./src/style.css" />
     <link rel="shortcut icon" href="#" type="image/x-icon" />
     <title>Forma za narudžbu</title>
   </head>
@@ -36,8 +31,6 @@
                 id="customerName"
                 pattern="[a-zA-Z\s]+"
               />
-              <i class="ri-checkbox-circle-line"></i>
-              <i class="ri-error-warning-line"></i>
               <span class="error-message"></span>
             </div>
             <div class="form-input">
@@ -48,8 +41,6 @@
                 id="customerPhoneNumber"
                 pattern="[0-9\s]+"
               />
-              <i class="ri-checkbox-circle-line"></i>
-              <i class="ri-error-warning-line"></i>
               <span class="error-message"></span>
             </div>
             <div class="form-input">
@@ -59,22 +50,16 @@
                 placeholder="Milutina Milankovića 69"
                 id="customerAddress"
               />
-              <i class="ri-checkbox-circle-line"></i>
-              <i class="ri-error-warning-line"></i>
               <span class="error-message"></span>
             </div>
             <div class="form-input">
               <label for="customerHomeNumber">Kućni broj*</label>
               <input type="number" placeholder="4" id="customerHomeNumber" />
-              <i class="ri-checkbox-circle-line"></i>
-              <i class="ri-error-warning-line"></i>
               <span class="error-message"></span>
             </div>
             <div class="form-input">
               <label for="customerZipcode">Poštanski broj*</label>
               <input type="number" placeholder="78000" id="customerZipcode" />
-              <i class="ri-checkbox-circle-line"></i>
-              <i class="ri-error-warning-line"></i>
               <span class="error-message"></span>
             </div>
             <div class="form-input">
@@ -84,8 +69,6 @@
                 placeholder="Banja Luka"
                 id="customerLocation"
               />
-              <i class="ri-checkbox-circle-line"></i>
-              <i class="ri-error-warning-line"></i>
               <span class="error-message"></span>
             </div>
             <div class="form-input">
@@ -95,8 +78,6 @@
                 placeholder="marko.markovic@gmail.com"
                 id="customerEmail"
               />
-              <i class="ri-checkbox-circle-line"></i>
-              <i class="ri-error-warning-line"></i>
               <span class="error-message"></span>
             </div>
           </div>
@@ -111,11 +92,14 @@
           </div>
         </form>
         <button form="form" type="submit">
-          <i class="ri-shopping-cart-2-line"></i>
+          <img
+            src="./src/img/shopping-cart-2-line.svg"
+            alt="shopping cart icon"
+          />
           Naruči
         </button>
       </main>
     </div>
-    <script src="index.js"></script>
+    <script defer src="./src/index.js"></script>
   </body>
 </html>
