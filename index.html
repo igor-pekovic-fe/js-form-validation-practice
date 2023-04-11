@@ -27,73 +27,72 @@
       <main>
         <form>
           <div class="form-input">
-            <label for="username">Ime i prezime</label>
-            <input type="text" placeholder="Igor Peković" id="username" />
-            <i class="ri-checkbox-circle-line"></i>
-            <i class="ri-error-warning-line"></i>
-            <span class="success-message"></span>
-            <span class="error-message"></span>
-          </div>
-          <div class="form-input">
-            <label for="username">Email</label>
+            <label for="customerName">Ime i prezime</label>
             <input
-              type="email"
-              placeholder="igor.pekovic95@gmail.com"
-              id="email"
+              type="text"
+              placeholder="Marko Marković"
+              id="customerName"
+              pattern="[a-zA-Z\s]+"
             />
             <i class="ri-checkbox-circle-line"></i>
             <i class="ri-error-warning-line"></i>
-            <span class="success-message"></span>
             <span class="error-message"></span>
           </div>
           <div class="form-input">
-            <label for="username">Adresa</label>
-            <input type="text" placeholder="Voždovačka 4" id="password" />
+            <label for="customerEmail">Email</label>
+            <input
+              type="email"
+              placeholder="marko.markovic@gmail.com"
+              id="customerEmail"
+            />
             <i class="ri-checkbox-circle-line"></i>
             <i class="ri-error-warning-line"></i>
-            <span class="success-message"></span>
             <span class="error-message"></span>
           </div>
           <div class="form-input">
-            <label for="username">Kućni broj</label>
-            <input type="text" placeholder="4" id="password2" />
+            <label for="customerAddress">Adresa</label>
+            <input
+              type="text"
+              placeholder="Milutina Milankovića 69"
+              id="customerAddress"
+            />
             <i class="ri-checkbox-circle-line"></i>
             <i class="ri-error-warning-line"></i>
-            <span class="success-message"></span>
             <span class="error-message"></span>
           </div>
           <div class="form-input">
-            <label for="username">Poštanski broj</label>
-            <input type="text" placeholder="78000" id="username" />
+            <label for="customerHomeNumber">Kućni broj</label>
+            <input type="number" placeholder="4" id="customerHomeNumber" />
             <i class="ri-checkbox-circle-line"></i>
             <i class="ri-error-warning-line"></i>
-            <span class="success-message"></span>
             <span class="error-message"></span>
           </div>
           <div class="form-input">
-            <label for="username">Telefon</label>
-            <input type="number" placeholder="000 111 222" id="email" />
+            <label for="customerZipcode">Poštanski broj</label>
+            <input type="number" placeholder="78000" id="customerZipcode" />
             <i class="ri-checkbox-circle-line"></i>
             <i class="ri-error-warning-line"></i>
-            <span class="success-message"></span>
             <span class="error-message"></span>
           </div>
           <div class="form-input">
-            <label for="username">Mjesto</label>
-            <input type="text" placeholder="Banja Luka" id="password" />
+            <label for="customerPhoneNumber">Telefon</label>
+            <input
+              type="tel"
+              placeholder="000 111 222"
+              id="customerPhoneNumber"
+            />
             <i class="ri-checkbox-circle-line"></i>
             <i class="ri-error-warning-line"></i>
-            <span class="success-message"></span>
             <span class="error-message"></span>
           </div>
           <div class="form-input">
-            <label for="username">Način plaćanja</label>
-            <input type="password" placeholder="Password two" id="password2" />
+            <label for="customerLocation">Mjesto</label>
+            <input type="text" placeholder="Banja Luka" id="customerLocation" />
             <i class="ri-checkbox-circle-line"></i>
             <i class="ri-error-warning-line"></i>
-            <span class="success-message"></span>
             <span class="error-message"></span>
           </div>
+
           <button type="submit">Naruči</button>
         </form>
       </main>
