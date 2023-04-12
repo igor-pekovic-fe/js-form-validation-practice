@@ -6,7 +6,7 @@
   --gray-dark-color: hsl(0, 0%, 47%);
   --success-color: hsl(145, 63%, 49%);
   --error-color: hsl(6, 78%, 57%);
-  --btn-color: hsl(25, 55%, 51%);
+  --btn-color: hsl(34, 95%, 50%);
 }
 
 /* Small CSS reset */
@@ -134,6 +134,7 @@ button {
   font-weight: 500;
   color: var(--white);
   text-transform: uppercase;
+  cursor: pointer;
   border: 2px solid var(--btn-color);
   border-radius: 5px;
   margin: auto;
