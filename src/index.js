@@ -125,3 +125,15 @@ function checkInputs() {
         Posebne napomene: ${specialInstructions}`);
   }
 }
+
+const inputs = document.querySelectorAll("input");
+
+inputs.forEach((input) =>
+  input.addEventListener("input", () => {
+    const formInput = input.parentElement;
+    if (input.value.length == "") {
+      formInput.classList.remove("success");
+      formInput.classList.remove("error");
+    }
+  })
+);
